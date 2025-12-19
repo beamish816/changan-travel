@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鹭游长安 - 中国入境游专家 | Luyou Chang'an International Travel</title>
+    
+    <!-- 外部CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Sans+Cyrl:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body data-lang="zh">
+    <!-- 头部导航 -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#1a5276" opacity="0.9"/>
+                        <circle cx="50" cy="50" r="30" fill="#ffffff"/>
+                        <path d="M35 50 Q50 30 65 50 Q50 70 35 50" fill="#1a5276"/>
+                        <circle cx="50" cy="50" r="8" fill="#d68910"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="logo-text">鹭游长安</div>
+                    <div class="logo-subtext">Luyou Chang'an International Travel</div>
+                </div>
+            </div>
+            
+            <div class="nav-container">
+                <!-- 语言选择器 -->
+                <div class="language-selector">
+                    <div class="current-language" id="currentLanguage">
+                        <div class="language-flag" id="currentFlag"></div>
+                        <span id="currentLangName">中文简体</span>
+                        <i class="fas fa-chevron-down" style="margin-left: 10px;"></i>
+                    </div>
+                    <ul class="language-list" id="languageList">
+                        <!-- 由JS动态生成 -->
+                    </ul>
+                </div>
+                
+                <!-- 主导航菜单 -->
+                <nav id="mainNav">
+                    <!-- 由JS动态渲染 -->
+                </nav>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 - 轮播图背景保持不变，只替换文字内容 -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide slide-1 active"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+            <div class="slide slide-4"></div>
+            <div class="slide slide-5"></div>
+            <div class="slide slide-6"></div>
+            <div class="slide slide-7"></div>
+            <div class="slide slide-8"></div>
+            <div class="slide slide-9"></div>
+            <div class="slide slide-10"></div>
+        </div>
+        
+        <!-- 文字内容由JS动态渲染 -->
+        <div class="slide-content"></div>
+        
+        <div class="slider-arrow prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        
+        <div class="slider-arrow next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        <div class="slider-controls">
+            <div class="slider-dots" id="sliderDots">
+                <!-- 由JS动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 以下所有区域的内容都由JS动态渲染 -->
+    <div id="services"></div>
+    <div id="destinations"></div>
+    <div id="itineraries"></div>
+
+    <!-- 询价表单区域（结构保留，内容部分由JS更新） -->
+    <section class="section inquiry-section" id="inquiry">
+        <div class="container">
+            <div class="content-box">
+                <!-- 标题由JS动态渲染 -->
+                <div class="section-title"></div>
+                
+                <form id="inquiryForm" class="inquiry-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="destination" class="required">主要目的地</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">请选择目的地</option>
+                                <option value="xi'an">西安（兵马俑、古城墙）</option>
+                                <option value="beijing">北京（故宫、长城）</option>
+                                <option value="chengdu">成都（大熊猫、美食）</option>
+                                <option value="shanghai">上海（现代都市）</option>
+                                <option value="guilin">桂林（山水风光）</option>
+                                <option value="multiple">多个城市组合</option>
+                                <option value="custom">定制路线</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tour-type" class="required">旅行类型</label>
+                            <select id="tour-type" name="tour-type" required>
+                                <option value="">请选择旅行类型</option>
+                                <option value="culture">文化历史游</option>
+                                <option value="nature">自然风光游</option>
+                                <option value="food">美食体验游</option>
+                                <option value="family">亲子家庭游</option>
+                                <option value="luxury">高端奢华游</option>
+                                <option value="photography">摄影之旅</option>
+                                <option value="business">商务考察游</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="travel-date" class="required">计划出行时间</label>
+                            <input type="date" id="travel-date" name="travel-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duration" class="required">行程天数</label>
+                            <select id="duration" name="duration" required>
+                                <option value="">请选择天数</option>
+                                <option value="3-5">3-5天</option>
+                                <option value="6-8">6-8天</option>
+                                <option value="9-12">9-12天</option>
+                                <option value="13+">13天以上</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="adults" class="required">成人人数</label>
+                            <select id="adults" name="adults" required>
+                                <option value="">请选择人数</option>
+                                <option value="1">1位</option>
+                                <option value="2">2位</option>
+                                <option value="3">3位</option>
+                                <option value="4">4位</option>
+                                <option value="5+">5位以上</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="children">儿童人数 (12岁以下)</label>
+                            <select id="children" name="children">
+                                <option value="0">0位</option>
+                                <option value="1">1位</option>
+                                <option value="2">2位</option>
+                                <option value="3">3位</option>
+                                <option value="4+">4位以上</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="language" class="required">导游语言偏好</label>
+                            <select id="language" name="language" required>
+                                <option value="">请选择语言</option>
+                                <option value="zh">中文</option>
+                                <option value="en">English</option>
+                                <option value="ar">العربية</option>
+                                <option value="ru">Русский</option>
+                                <option value="other">其他语言</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">大致预算 (每人)</label>
+                            <select id="budget" name="budget">
+                                <option value="">请选择预算范围</option>
+                                <option value="1000-2000">$1000-2000</option>
+                                <option value="2000-4000">$2000-4000</option>
+                                <option value="4000-6000">$4000-6000</option>
+                                <option value="6000+">$6000以上</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="required">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="required">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="required">电话号码</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-requests">特殊要求与备注</label>
+                        <textarea id="special-requests" name="special-requests" rows="5"></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="text-align: center; margin-top: 40px;">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+                            提交咨询
+                        </button>
+                        <p style="margin-top: 20px; color: var(--text-light); font-size: 0.9rem;">
+                            提交后，我们的旅行专家将在24小时内与您联系
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌简介、客户评价、页脚由JS动态插入 -->
+    <div id="about"></div>
+    <div id="testimonials"></div>
+    <div id="contact"></div>
+
+    <!-- 微信二维码弹窗 -->
+    <div id="wechatModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; position: relative;">
+            <button id="closeModal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+            <h3 style="color: #1a5276; margin-bottom: 20px;">扫描二维码添加微信</h3>
+            <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: inline-block; margin-bottom: 20px;">
+                <div style="width: 200px; height: 200px; background: linear-gradient(135deg, #07c160, #05a049); display: flex; align-items: center; justify-content: center; border-radius: 10px; margin: 0 auto;">
+                    <i class="fab fa-weixin" style="font-size: 100px; color: white;"></i>
+                </div>
+            </div>
+            <p style="color: #333; margin-bottom: 10px;"><strong>微信号：LuyouChangAn</strong></p>
+            <p style="color: #666; font-size: 0.9rem;">添加后请备注"旅游咨询"</p>
+            <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;">
+                <button id="copyWechatId" style="padding: 12px 20px; background: #07c160; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">复制微信号</button>
+                <button id="closeModalBtn" style="padding: 12px 20px; background: #f1f1f1; color: #333; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="js/lang-data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
